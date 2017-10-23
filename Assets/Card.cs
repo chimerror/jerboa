@@ -1,106 +1,43 @@
 ﻿using System.IO;
 using UnityEngine;
+using UnityEngine.UI;
 
-[RequireComponent(typeof(SpriteRenderer))]
+[RequireComponent(typeof(Image))]
 public class Card : MonoBehaviour
 {
-    [SerializeField]
-    private bool _faceUp = true;
+    private static AssetBundle CardSprites;
 
-    [SerializeField]
-    private Suit _suit;
+    public bool faceUp = true;
+    public Suit suit = Suit.Spades;
+    public Rank rank = Rank.Ace;
+    public Back back = Back.Red;
 
-    [SerializeField]
-    private Rank _rank;
-
-    [SerializeField]
-    private Back _back;
-
-    private SpriteRenderer _spriteRenderer;
-    private AssetBundle _cardSprites;
-
-    public bool FaceUp
-    {
-        get
-        {
-            return _faceUp;
-        }
-
-        set
-        {
-            _faceUp = value;
-            UpdateCardSprite();
-        }
-    }
-
-    public Suit Suit
-    {
-        get
-        {
-            return _suit;
-        }
-
-        set
-        {
-            _suit = value;
-            UpdateCardSprite();
-        }
-    }
-
-    public Rank Rank
-    {
-        get
-        {
-            return _rank;
-        }
-
-        set
-        {
-            _rank = value;
-            UpdateCardSprite();
-        }
-    }
-
-    public Back Back
-    {
-        get
-        {
-            return _back;
-        }
-
-        set
-        {
-            _back = value;
-            UpdateCardSprite();
-        }
-    }
+    private Image _image;
 
     private void Awake()
     {
-        _spriteRenderer = GetComponent<SpriteRenderer>();
+        _image = GetComponent<Image>();
+        if (CardSprites == null)
+        {
+            CardSprites = AssetBundle.LoadFromFile(Path.Combine(Application.streamingAssetsPath, "AssetBundles/cards"));
+            Debug.Assert(CardSprites != null, "Couldn't load cards!");
+        }
     }
 
-	private void Start()
-    {
-        _cardSprites = AssetBundle.LoadFromFile(Path.Combine(Application.streamingAssetsPath, "AssetBundles/cards"));
-        Debug.Assert(_cardSprites != null, "Couldn't load cards!");
-        UpdateCardSprite();
-    }
-
-    private void UpdateCardSprite()
+    private void Update()
     {
         string path;
-        if (_faceUp)
+        if (faceUp)
         {
-            path = string.Format("assets/cards/card{0}{1}.png", _suit.GetAssetName(), _rank.GetAssetName());
+            path = string.Format("assets/cards/card{0}{1}.png", suit.GetAssetName(), rank.GetAssetName());
         }
         else
         {
-            path = string.Format("assets/cards/cardBack{0}.png", _back.GetAssetName());
+            path = string.Format("assets/cards/cardBack{0}.png", back.GetAssetName());
         }
 
-        var cardSprite = _cardSprites.LoadAsset<Sprite>(path);
+        var cardSprite = CardSprites.LoadAsset<Sprite>(path);
         Debug.AssertFormat(cardSprite != null, "Unable to load card: {0}", path);
-        _spriteRenderer.sprite = cardSprite;
+        _image.sprite = cardSprite;
     }
 }
