@@ -1,0 +1,72 @@
+ManifestFileVersion: 0
+CRC: 4000372295
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 3bde8776bcad88f9d3e44acce08605c5
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 21f0dc8ebad690f009368069428e0a1a
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/Cards/cardBackGreen.png
+- Assets/Cards/cardBackRed.png
+- Assets/Cards/cardDiamondsA.png
+- Assets/Cards/cardDiamonds9.png
+- Assets/Cards/cardSpades8.png
+- Assets/Cards/cardSpadesJ.png
+- Assets/Cards/cardClubs9.png
+- Assets/Cards/cardDiamonds7.png
+- Assets/Cards/cardHearts8.png
+- Assets/Cards/cardHeartsQ.png
+- Assets/Cards/cardDiamondsJ.png
+- Assets/Cards/cardHearts7.png
+- Assets/Cards/cardDiamonds10.png
+- Assets/Cards/cardSpades6.png
+- Assets/Cards/cardHeartsK.png
+- Assets/Cards/cardSpades10.png
+- Assets/Cards/cardDiamonds5.png
+- Assets/Cards/cardClubsK.png
+- Assets/Cards/cardHearts4.png
+- Assets/Cards/cardHearts3.png
+- Assets/Cards/cardHearts10.png
+- Assets/Cards/cardClubs10.png
+- Assets/Cards/cardDiamondsK.png
+- Assets/Cards/cardDiamonds4.png
+- Assets/Cards/cardSpades2.png
+- Assets/Cards/cardSpadesQ.png
+- Assets/Cards/cardClubsA.png
+- Assets/Cards/cardClubs5.png
+- Assets/Cards/cardHearts9.png
+- Assets/Cards/cardDiamonds2.png
+- Assets/Cards/cardSpades4.png
+- Assets/Cards/cardDiamondsQ.png
+- Assets/Cards/cardDiamonds6.png
+- Assets/Cards/cardHearts5.png
+- Assets/Cards/cardClubs2.png
+- Assets/Cards/cardSpades5.png
+- Assets/Cards/cardHearts2.png
+- Assets/Cards/cardClubsJ.png
+- Assets/Cards/cardHeartsJ.png
+- Assets/Cards/cardHearts6.png
+- Assets/Cards/cardClubs8.png
+- Assets/Cards/cardClubsQ.png
+- Assets/Cards/cardBackBlue.png
+- Assets/Cards/cardSpades9.png
+- Assets/Cards/cardHeartsA.png
+- Assets/Cards/cardClubs7.png
+- Assets/Cards/cardSpadesA.png
+- Assets/Cards/cardClubs4.png
+- Assets/Cards/cardSpades7.png
+- Assets/Cards/cardSpadesK.png
+- Assets/Cards/cardClubs6.png
+- Assets/Cards/cardClubs3.png
+- Assets/Cards/cardDiamonds3.png
+- Assets/Cards/cardDiamonds8.png
+- Assets/Cards/cardSpades3.png
+Dependencies: []
