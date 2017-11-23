@@ -33,6 +33,10 @@ public class GameManager : MonoBehaviour
             shoe.Deal(punterHand);
         }
         _gameState = GameState.AskingIfBankerHits;
+        if (bankerHand.player is AiPlayer)
+        {
+            BankerResponds((bankerHand.player as AiPlayer).HitOrStay(punterHand, true));
+        }
     }
 
     public void BankerResponds(bool hit)
@@ -81,6 +85,11 @@ public class GameManager : MonoBehaviour
 
         _random = new System.Random(randomSeed);
         UnityEngine.Random.InitState(randomSeed);
+
+        punterHand.player = new HumanPlayer();
+        punterHand.player.hand = punterHand;
+        bankerHand.player = new HumanPlayer();
+        bankerHand.player.hand = bankerHand;
     }
 
     private void Update()
@@ -102,7 +111,15 @@ public class GameManager : MonoBehaviour
                 else
                 {
                     _gameState = GameState.AskingIfPunterHits;
-                    punterHand.buttons.gameObject.SetActive(true);
+
+                    if (punterHand.player is AiPlayer)
+                    {
+                        PunterResponds((punterHand.player as AiPlayer).HitOrStay(bankerHand, false));
+                    }
+                    else
+                    {
+                        punterHand.buttons.gameObject.SetActive(true);
+                    }
                 }
                 break;
         }

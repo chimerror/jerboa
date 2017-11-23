@@ -10,6 +10,7 @@ public class Hand : MonoBehaviour
     public HorizontalLayoutGroup buttons;
     public HorizontalLayoutGroup cardsGroup;
     public Text handValue;
+    public Player player;
 
     public int Value
     {
