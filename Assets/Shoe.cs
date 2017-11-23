@@ -44,9 +44,9 @@ public class Shoe : MonoBehaviour
         {
             shoe.Push(card);
         }
-        shoe.Pop();
-        shoe.Pop();
-        shoe.Pop();
+        Destroy(shoe.Pop().gameObject);
+        Destroy(shoe.Pop().gameObject);
+        Destroy(shoe.Pop().gameObject);
     }
 
     private void AddDeck(List<Card> cardList, Back back)
