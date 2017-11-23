@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class Hand : MonoBehaviour
 {
     public List<Card> cards = new List<Card>();
+    public HorizontalLayoutGroup cardsGroup;
     public Text handValue;
 
     public int Value
